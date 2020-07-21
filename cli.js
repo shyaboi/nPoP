@@ -520,7 +520,6 @@ const linuxDonus = function () {
   });
   exec("cd nPoP && vi nPoP", (error, data) => {
     if (error) {
-      console.log("You don't have vs code installed, or dont have the PATH set.");
       return;
     }
 
@@ -530,9 +529,7 @@ const linuxDonus = function () {
   });
 };
 if (process.platform === "linux") {
-  setTimeout(() => {
     linuxDonus()
-  }, 15000);
 }
 if (process.platform === "win32" || "darwin") {
   setTimeout(() => {
