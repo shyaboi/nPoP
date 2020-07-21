@@ -509,7 +509,7 @@ const doonus = function () {
   });
 };
 const linuxDonus = function () {
-  exec("x-xxx-browser http://localhost:3333 && echo opening default browser to http://localhost:3333", (error, data) => {
+  exec("x-www-browser http://localhost:3333 && echo opening default browser to http://localhost:3333", (error, data) => {
     if (error) {
       console.log("You don't have vs code installed, or dont have the PATH set.");
       return;
@@ -518,13 +518,13 @@ const linuxDonus = function () {
     console.log(data);
 
   });
-  exec("cd nPoP && vi nPoP", (error, data) => {
+  exec("cd nPoP && nano server.js", (error, data) => {
     if (error) {
       return;
     }
 
     console.log(data);
-    console.log("Opening vi you linux 1337");
+    console.log("Opening nano you linux 1337");
 
   });
 };
