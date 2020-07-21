@@ -61,16 +61,12 @@ if (process.platform === "win32") {
     "./nPoP/package.json",
     `
     {
-        "description": "My new site made with nPoP",
         "main": "server.js",
         "scripts": {
           "start": "nodemon server.js",
           "pop": "start http://localhost:3333 && nodemon server.js"
         },
-        "author": "Shyaboi",
-        "license": "ISC",
-        "dependencies": {
-        }
+        "author": "Shyaboi"
       }`,
     (err) => {
       if (err) throw err;
@@ -90,8 +86,9 @@ if(process.platform === "darwin")  {
   );
   fs.writeFile(
     "./nPoP/package.json",
-    `
-    {
+    `{
+      "name":"new npop site",
+      "version":"1.0.0",
         "description": "My new site made with nPoP",
         "main": "server.js",
         "scripts": {
@@ -111,7 +108,7 @@ if(process.platform === "darwin")  {
 }
 
 
-if(process.platform !== "darwin", "win32")  {
+if(process.platform === "linux")  {
   exec(
     `echo You runnin ${process.platform} && echo package JSON created.`,
     (error, data, getter) => {
@@ -124,19 +121,20 @@ if(process.platform !== "darwin", "win32")  {
   );
   fs.writeFile(
     "./nPoP/package.json",
-    `
-    {
-        "description": "My new site made with nPoP",
-        "main": "server.js",
-        "scripts": {
-          "start": "node server.js",
-          "pop": "nodemon server.js"
-        },
-        "author": "Shyaboi",
-        "license": "ISC",
-        "dependencies": {
-        }
-      }`,
+    `{
+      "name":"new npop site",
+      "version":"1.0.0",
+      "description": "My new site made with nPoP",
+      "main": "server.js",
+      "scripts": {
+        "start": "node server.js",
+        "pop": "nodemon server.js"
+      },
+      "author": "Shyaboi",
+      "license": "ISC",
+      "dependencies": {
+      }
+    }`,
     (err) => {
       if (err) throw err;
       console.log("package JSON made macs");
@@ -483,10 +481,18 @@ const donus = function () {
       console.log("error", error.message);
       return;
     }
-    console.log("pop script starting");
+    exec("echo opening default browser to http://localhost:3333", (error, data) => {
+      if (error) {
+        console.log("You don't have vs code installed, or dont have the PATH set.");
+        return;
+      }
+  
+      console.log(data);
+  
+    });
 
-    console.log(data);
   });
+
 };
 const doonus = function () {
   exec("cd nPoP && code .", (error, data) => {
@@ -496,11 +502,40 @@ const doonus = function () {
     }
 
     console.log(data);
-    console.log("opening default code editor");
+    console.log("opening VS Code");
+
   });
 };
+const linuxDonus = function () {
+  exec("x-xxx-browser http://localhost:3333 && echo opening default browser to http://localhost:3333", (error, data) => {
+    if (error) {
+      console.log("You don't have vs code installed, or dont have the PATH set.");
+      return;
+    }
 
-setTimeout(() => {
-  donus();
-  doonus();
-}, 15000);
+    console.log(data);
+
+  });
+  exec("cd nPoP && vi nPoP", (error, data) => {
+    if (error) {
+      console.log("You don't have vs code installed, or dont have the PATH set.");
+      return;
+    }
+
+    console.log(data);
+    console.log("Opening vi you linux 1337");
+
+  });
+};
+if (process.platform === "linux") {
+  setTimeout(() => {
+    linuxDonus()
+  }, 15000);
+}
+if (process.platform === "win32" || "darwin") {
+  setTimeout(() => {
+    donus();
+    doonus();
+  }, 15000);
+}
+
