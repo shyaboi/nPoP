@@ -59,9 +59,6 @@ if (process.platform === "win32") {
           "start": "nodemon server.js",
           "pop": "start http://localhost:3333 && nodemon server.js"
         },
-        "keywords": [
-          "npop", "server", "express", "simple", "node", "nodejs"
-        ],
         "author": "Shyaboi",
         "license": "ISC",
         "dependencies": {
@@ -92,9 +89,6 @@ if (process.platform === "win32") {
           "start": "nodemon server.js",
           "pop": "open http://localhost:3333 && nodemon server.js"
         },
-        "keywords": [
-          "npop", 'server', "express", "simple", "node", "nodejs"
-        ],
         "author": "Shyaboi",
         "license": "ISC",
         "dependencies": {
@@ -477,4 +471,4 @@ const doonus = function () {
 setTimeout(() => {
   donus();
   doonus();
-}, 10000);
+}, 13000);
