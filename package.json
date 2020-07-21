@@ -1,7 +1,7 @@
 
     {
         "name": "npop",
-        "version": "1.0.0",
+        "version": "0.0.1",
         "description": "My new site made with nPoP",
         "main": "server.js",
         "scripts": {
