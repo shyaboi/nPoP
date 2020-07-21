@@ -119,7 +119,7 @@ if (process.platform === "win32") {
 // });
 
 exec(
-  "cd ./nPoP && npm i nPoP express nodemon",
+  "cd ./nPoP && npm i npop express nodemon",
   (error, data, getter) => {
     if (error) {
       console.log("error", error.message);
