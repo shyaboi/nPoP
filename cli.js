@@ -94,8 +94,8 @@ if (process.platform === "win32") {
         "description": "My new site made with nPoP",
         "main": "server.js",
         "scripts": {
-          "start": "nodemon server.js",
-          "pop": "http://localhost:3333 && nodemon server.js"
+          "start": "node server.js",
+          "pop": "nodemon server.js"
         },
         "author": "Shyaboi",
         "license": "ISC",
@@ -270,23 +270,12 @@ exec(
   }
 );
 
-exec(
-  "cd nPoP/views/styles && echo making it stlyeish",
-  (error, data) => {
-    if (error) {
-      console.log("error", error.message);
-      return;
-    }
-    console.log("cd");
-    console.log(data);
-  }
-);
 
 fs.mkdir("./nPoP/views/styles", { recursive: true }, (err) => {
   if (err) throw err;
 });
 exec(
-  "cd nPoP/views/styles && echo went to style folder",
+  "cd nPoP/views/styles && echo making it stlyeish",
   (error, data) => {
     if (error) {
       console.log("error", error.message);
@@ -435,7 +424,7 @@ fs.writeFile(
 );
 console.log("js homepage made");
 
-exec("cd nPop && git init", (error, data) => {
+exec("cd nPoP && git init", (error, data) => {
   if (error) {
     console.log("error", error.message);
     return;
