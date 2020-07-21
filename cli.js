@@ -22,7 +22,7 @@ fs.mkdir("./nPoP", { recursive: true }, (err) => {
   });
 });
 
-exec("cd ./nPoP && echo gitignorifying", (error, data, getter) => {
+exec("cd nPoP && echo gitignorifying", (error, data, getter) => {
   if (error) {
     console.log("error", error.message);
     return;
@@ -95,7 +95,7 @@ if (process.platform === "win32") {
         "main": "server.js",
         "scripts": {
           "start": "nodemon server.js",
-          "pop": "open http://localhost:3333 && nodemon server.js"
+          "pop": "http://localhost:3333 && nodemon server.js"
         },
         "author": "Shyaboi",
         "license": "ISC",
@@ -121,7 +121,7 @@ if (process.platform === "win32") {
 // });
 
 exec(
-  "cd ./nPoP && npm i npop express nodemon",
+  "cd nPoP && npm i npop express nodemon",
   (error, data, getter) => {
     if (error) {
       console.log("error", error.message);
@@ -161,7 +161,7 @@ fs.mkdir("./nPoP/views", { recursive: true }, (err) => {
 });
 console.log("views folder created");
 
-exec("cd ./nPoP && cd views", (error, data, getter) => {
+exec("cd nPoP && cd views", (error, data, getter) => {
   if (error) {
     console.log("error", error.message);
     return;
@@ -245,7 +245,7 @@ fs.mkdir("./nPoP/views/imgs", { recursive: true }, (err) => {
 console.log("images folder created");
 
 exec(
-  "cd ./nPoP/views/imgs && curl -o logo.png https://i.ibb.co/sWr5Tpb/logo.png",
+  "cd nPoP/views/imgs && curl -o logo.png https://i.ibb.co/sWr5Tpb/logo.png",
   (error, data) => {
     if (error) {
       console.log("error", error.message);
@@ -271,7 +271,7 @@ exec(
 );
 
 exec(
-  "cd ./nPoP/views/styles && echo making it stlyeish",
+  "cd nPoP/views/styles && echo making it stlyeish",
   (error, data) => {
     if (error) {
       console.log("error", error.message);
@@ -286,7 +286,7 @@ fs.mkdir("./nPoP/views/styles", { recursive: true }, (err) => {
   if (err) throw err;
 });
 exec(
-  "cd ./nPoP/views/styles && echo went to style folder",
+  "cd nPoP/views/styles && echo went to style folder",
   (error, data) => {
     if (error) {
       console.log("error", error.message);
@@ -337,7 +337,7 @@ fs.writeFile(
 );
 console.log("style.css created");
 
-exec("cd ./nPoP/views && echo making JavaScript", (error, data) => {
+exec("cd nPoP/views && echo making JavaScript", (error, data) => {
   if (error) {
     console.log("error", error.message);
     return;
@@ -350,7 +350,7 @@ fs.mkdir("./nPoP/views/js", { recursive: true }, (err) => {
   if (err) throw err;
 });
 
-exec("cd ./nPoP/views/js && echo making JavaScript2", (error, data) => {
+exec("cd nPoP/views/js && echo making JavaScript2", (error, data) => {
   if (error) {
     console.log("error", error.message);
     return;
@@ -435,7 +435,7 @@ fs.writeFile(
 );
 console.log("js homepage made");
 
-exec("cd ./nPop && git init", (error, data) => {
+exec("cd nPop && git init", (error, data) => {
   if (error) {
     console.log("error", error.message);
     return;
@@ -454,7 +454,7 @@ exec("echo git initted", (error, data) => {
 });
 
 const donus = function () {
-  exec("cd ./nPoP && npm run pop", (error, data) => {
+  exec("cd nPoP && npm run pop", (error, data) => {
     if (error) {
       console.log("error", error.message);
       return;
@@ -465,7 +465,7 @@ const donus = function () {
   });
 };
 const doonus = function () {
-  exec("cd ./nPoP && code .", (error, data) => {
+  exec("cd nPoP && code .", (error, data) => {
     if (error) {
       console.log("error", error.message);
       return;
@@ -479,4 +479,4 @@ const doonus = function () {
 setTimeout(() => {
   donus();
   doonus();
-}, 13000);
+}, 15000);
