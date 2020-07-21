@@ -430,7 +430,6 @@ exec("cd nPoP && git init", (error, data) => {
     return;
   }
   console.log(data);
-  console.log("opening default code editor");
 });
 
 exec("echo git initted", (error, data) => {
