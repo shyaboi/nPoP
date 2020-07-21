@@ -22,6 +22,14 @@ fs.mkdir("./nPoP", { recursive: true }, (err) => {
   });
 });
 
+exec("cd ./nPoP && echo gitignorifying", (error, data, getter) => {
+  if (error) {
+    console.log("error", error.message);
+    return;
+  }
+  console.log(data);
+});
+
 fs.writeFile(
   "./nPoP/.gitignore",
   `.gitignore
