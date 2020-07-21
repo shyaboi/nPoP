@@ -76,7 +76,42 @@ if (process.platform === "win32") {
       if (err) throw err;
     }
   );
-} else {
+} 
+if(process.platform === "darwin")  {
+  exec(
+    `echo You runnin ${process.platform} && echo package JSON created.`,
+    (error, data, getter) => {
+      if (error) {
+        console.log("error", error.message);
+        return;
+      }
+      console.log(data);
+    }
+  );
+  fs.writeFile(
+    "./nPoP/package.json",
+    `
+    {
+        "description": "My new site made with nPoP",
+        "main": "server.js",
+        "scripts": {
+          "start": "node server.js",
+          "pop": "open http://localhost:3333 && nodemon server.js"
+        },
+        "author": "Shyaboi",
+        "license": "ISC",
+        "dependencies": {
+        }
+      }`,
+    (err) => {
+      if (err) throw err;
+      console.log("package JSON made macs");
+    }
+  );
+}
+
+
+if(process.platform !== "darwin", "win32")  {
   exec(
     `echo You runnin ${process.platform} && echo package JSON created.`,
     (error, data, getter) => {
@@ -104,7 +139,7 @@ if (process.platform === "win32") {
       }`,
     (err) => {
       if (err) throw err;
-      console.log("package JSON made (unix/gnu build)");
+      console.log("package JSON made macs");
     }
   );
 }
@@ -132,6 +167,8 @@ exec(
     console.log("starting yoour site ( ͡° ͜ʖ ͡°)");
     console.log("Have fun with nPoP!");
     console.log("If you want to close the server press ctrl+c");
+    console.log("Server running on http://localhost:3333");
+
   }
 );
 
@@ -438,7 +475,6 @@ exec("echo git initted", (error, data) => {
     return;
   }
   console.log(data);
-  console.log("opening default code editor");
 });
 
 const donus = function () {
@@ -455,7 +491,7 @@ const donus = function () {
 const doonus = function () {
   exec("cd nPoP && code .", (error, data) => {
     if (error) {
-      console.log("error", error.message);
+      console.log("You don't have vs code installed, or dont have the PATH set.");
       return;
     }
 
