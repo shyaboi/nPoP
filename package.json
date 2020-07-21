@@ -1,6 +1,6 @@
 {
   "name": "npop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "nPoP is a simple server package.",
   "main": "index.js",
   "init": "npm init -y && npm i express",
@@ -9,7 +9,12 @@
     "start": "nodemon index.js"
   },
   "keywords": [
-    "node", "server", "express", "simple", "npop", "nodemon"
+    "node",
+    "server",
+    "express",
+    "simple",
+    "npop",
+    "nodemon"
   ],
   "author": "Shyaboi",
   "license": "ISC",
