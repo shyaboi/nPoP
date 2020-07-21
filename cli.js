@@ -59,8 +59,10 @@ if (process.platform === "win32") {
   );
   fs.writeFile(
     "./nPoP/package.json",
-    `
-    {
+    `{
+      "name":"newnpopsite",
+    "version":"1.0.0",
+      "description": "My new site made with nPoP",
         "main": "server.js",
         "scripts": {
           "start": "nodemon server.js",
@@ -87,7 +89,7 @@ if(process.platform === "darwin")  {
   fs.writeFile(
     "./nPoP/package.json",
     `{
-      "name":"new npop site",
+      "name":"newnpopsite",
       "version":"1.0.0",
         "description": "My new site made with nPoP",
         "main": "server.js",
@@ -122,7 +124,7 @@ if(process.platform === "linux")  {
   fs.writeFile(
     "./nPoP/package.json",
     `{
-      "name":"new npop site",
+      "name":"newnpopsite",
       "version":"1.0.0",
       "description": "My new site made with nPoP",
       "main": "server.js",
