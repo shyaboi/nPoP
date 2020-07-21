@@ -146,10 +146,10 @@ exec(
 
 fs.writeFile(
   "./nPoP/server.js",
-  `var nPoP = require("nPoP");
-  var server = new nPoP()
+  `var PoP = require("npop");
+  var n = new PoP()
   
-  server.pop()`,
+  n.pop()`,
   (err) => {
     if (err) throw err;
   }
