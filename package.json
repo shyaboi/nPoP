@@ -1,0 +1,16 @@
+
+    {
+        "description": "My new site made with nPoP",
+        "main": "server.js",
+        "scripts": {
+          "start": "nodemon server.js",
+          "pop": "start http://localhost:3333 && nodemon server.js"
+        },
+        "keywords": [
+          "npop", "server", "express", "simple", "node", "nodejs"
+        ],
+        "author": "Shyaboi",
+        "license": "ISC",
+        "dependencies": {
+        }
+      }
