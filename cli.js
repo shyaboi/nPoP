@@ -73,7 +73,9 @@ if (process.platform === "win32") {
     (err) => {
       if (err) throw err;
     }
-  );
+    
+    );
+    console.log("package JSON made for windows");
 } 
 if(process.platform === "darwin")  {
   exec(
@@ -104,7 +106,7 @@ if(process.platform === "darwin")  {
       }`,
     (err) => {
       if (err) throw err;
-      console.log("package JSON made macs");
+      console.log("package JSON made for macs");
     }
   );
 }
@@ -139,7 +141,7 @@ if(process.platform === "linux")  {
     }`,
     (err) => {
       if (err) throw err;
-      console.log("package JSON made macs");
+      console.log("package JSON made for linux");
     }
   );
 }
@@ -518,7 +520,7 @@ const linuxDonus = function () {
     console.log(data);
 
   });
-  exec("cd nPoP && nano server.js", (error, data) => {
+  exec("x-terminal-emulator && nano server.js", (error, data) => {
     if (error) {
       return;
     }
@@ -529,7 +531,9 @@ const linuxDonus = function () {
   });
 };
 if (process.platform === "linux") {
-    linuxDonus()
+  setTimeout(() => {
+    linuxDonus
+  }, 15000);
 }
 if (process.platform === "win32" || "darwin") {
   setTimeout(() => {
