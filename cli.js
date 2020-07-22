@@ -532,7 +532,7 @@ const linuxDonus = function () {
 };
 if (process.platform === "linux") {
   setTimeout(() => {
-    linuxDonus
+    linuxDonus()
   }, 15000);
 }
 if (process.platform === "win32" || "darwin") {
