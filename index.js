@@ -73,6 +73,7 @@ app.get(route3, ok)
 app.post(route3, function (req, res, next) {
 const stuff = req.body
 console.log(stuff)
+res.redirect("/")
 });
 
 

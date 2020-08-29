@@ -225,12 +225,14 @@ fs.writeFile(
 <br>
       <a href="/dexy" id="dexy">Dexy</a>
       <form action="dexy" method="POST">
-       
-      <button name="dexy" method="POST" type="submit" value="You posted data to your nPoP server!" >Post Demo! Watch your servers console log!</button> </form>
+       <input name="dexyInput" type="text" value="">
+       <br>
+      <button name="dexyButton" method="POST" type="submit" value="You posted data to your nPoP server!" >Post Demo! 
+        
+        Watch your servers console log!</button> </form>
     </div>
   </body>
-  <script src="dvd.js"></script>
-</html>`,
+  <script src="dvd.js"></script>`,
   (err) => {
     if (err) throw err;
   }
