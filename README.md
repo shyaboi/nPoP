@@ -51,6 +51,17 @@ npop(
     (not currently in use)="string"
 )
 ```
+If you would like to leave some parameters as default, but want to set ones after it sequentually, you will set those paramerters as undefiend.
+
+An example of leaving the default values and only changing other paramerters:
+```
+const PoP = require("npop");
+const n = new PoP()
+  
+n.pop(undefined, 3000)
+```
+In the above function the dexyGet function is left default, and only the port has been set manualy. This can be done for any number of paramerters that want to be left default, just use "undefined" in the parameters place.
+
 
 # dexyGet()
 
