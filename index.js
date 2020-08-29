@@ -11,7 +11,7 @@ class Pop {
 
   }
 
-  dexyJson (req, res, next) {
+  dexyGet (req, res, next) {
     res.json([{ Expample: 'This is some data that could be resed by nPoP if you set the server GET settings.' }, {anoter1:"this is more data"},
   {Another: "Dexy has a POST route as well ( ͡° ͜ʖ ͡°)"}]);
   }
@@ -27,7 +27,7 @@ module.exports = Pop
 class Server extends Pop {
 
 pop(
-ok = this.dexyJson,
+ok = this.dexyGet,
 pN=process.env.PORT||3333,
  route1="/",
   route2="/index",
