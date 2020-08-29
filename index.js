@@ -11,7 +11,7 @@ class Pop {
 
   }
 
-  dexyGet (req, res, next) {
+  dexyJson (req, res, next) {
     res.json([{ Expample: 'This is some data that could be resed by nPoP if you set the server GET settings.' }, {anoter1:"this is more data"},
   {Another: "Dexy has a POST route as well ( ͡° ͜ʖ ͡°)"}]);
   }
@@ -27,7 +27,7 @@ module.exports = Pop
 class Server extends Pop {
 
 pop(
-ok = this.dexyGet,
+ok = this.dexyJson,
 pN=process.env.PORT||3333,
  route1="/",
   route2="/index",
@@ -43,7 +43,8 @@ pN=process.env.PORT||3333,
   // var pNum = pN
   // var portNumber = process.env || pNum
   const port = pN
-
+  
+  
   app.use("/", express.static("./views/imgs"));
   app.use("/index", express.static("./views/imgs"));
   app.use("/dexy", express.static("./views/imgs"));
@@ -53,7 +54,9 @@ pN=process.env.PORT||3333,
   app.use("/", express.static("./views/styles"));
   app.use("/index", express.static("./views/styles"));
   app.use("/dexy", express.static("./views/styles"));
-
+  const bodyParser = require("body-parser");
+  app.use(bodyParser.json()); // to support JSON bodies
+  app.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded 
 
   
 
@@ -68,7 +71,8 @@ res.sendFile(path.join(__dirname, dex));
 app.get(route3, ok)
 
 app.post(route3, function (req, res, next) {
-res.json({ Title: "This is POST data"}, {Expample: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'});
+const stuff = req.body
+console.log(stuff)
 });
 
 
