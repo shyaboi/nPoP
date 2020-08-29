@@ -574,7 +574,7 @@ exec("echo git initted", (error, data) => {
 });
 
 const donus = function () {
-  exec("cd nPoP && npm run pop", (error, data) => {
+  exec("cd nPoP/ && npm run pop", (error, data) => {
     if (error) {
       console.log("error", error.message);
       return;
