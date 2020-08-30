@@ -41,7 +41,7 @@ If you have made a "views" dicrectory/folder the server will have 3 default rout
 You can pass in the following parameters into the npop function:
 
 ```
-npop(
+n.pop(
     homeGet(), //this parameter can be fed a function containing request and response from express.//
     indexGet(), //this parameter can be fed a function containing request and response from express.//
     dexyGet(), //this parameter can be fed a function containing request and response from express.//
