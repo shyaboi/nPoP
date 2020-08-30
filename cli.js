@@ -253,8 +253,13 @@ fs.writeFile(
         <div id="mainContainer">
       <h1>Documentation</h1>
       a 2nd page for things. (This is very much a work in progress.)
-      <a href="/">home</a>
-      <a href="/dexy">dexy</a>
+      <br>
+    <a href="https://www.npmjs.com/package/npop">npm page</a>
+    <br>
+    <a href="/">home</a>
+    <br>
+    <a href="/dexy">dexy</a>
+    <br>
       <h1 id="npop">nPoP</h1>
       <p>
         In its current form (nPoP ex) nPoP is a quick-start package/dead simple
