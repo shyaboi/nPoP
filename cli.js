@@ -186,9 +186,8 @@ exec(
 fs.writeFile(
   "./nPoP/server.js",
   `var PoP = require("npop");
-  var n = new PoP()
-  
-  n.pop()`,
+var n = new PoP();
+n.pop();`,
   (err) => {
     if (err) throw err;
   }

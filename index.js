@@ -1,20 +1,29 @@
-const routeArray = [
-  route1="/",
-  route2="/index",
-  route3="/dexy",
-  route4="/wildcard"
-];
+// class Routes{
+//    routeArray = [
+//     route1="/",
+//     route2="/index",
+//     route3="/dexy",
+//     route4="/wildcard"
+//   ];
+// }
+// module.exports = Routes
 
 // Main class exported with extra  legacy functions
 
 
 class Pop {
-  
+  routeArray =
+   [
+    this.route1="/",
+    this.route2="/index",
+    this.route3="/dexy",
+    this.route4="/wildcard"
+  ];
   
   hello() {
     console.log('Hello npm friends');
   }
-  
+  s
   nThing(){
     console.log(pop);
   }
@@ -31,10 +40,9 @@ class Pop {
     }
   indexGet = (req, res, next, index="../../views/index2.html")=>{
       var path = require('path');
-     
       res.sendFile(path.join(__dirname, index));
-      }
-    nuevoRoute = ()=> {}
+  }
+  nuevoRoute = ()=> {}
     
 
   }
@@ -54,12 +62,13 @@ module.exports = Pop
 
 class Server extends Pop {
   
+  
   pop(
     homeGet = this.homeGet,
     dexyGet = this.dexyGet,
     indexGet = this.indexGet,
     pN=process.env.PORT||3333,
-    ok = [routeArray],
+    ok = this.routeArray,
       ){
   
   const express = require('express')
@@ -70,28 +79,28 @@ class Server extends Pop {
   const port = pN
   
   
-  app.use(route1, express.static("./views/imgs"));
-  app.use(route1, express.static("./views/js"));
-  app.use(route1, express.static("./views/styles"));
-  app.use(route2, express.static("./views/imgs"));
-  app.use(route2, express.static("./views/js"));
-  app.use(route2, express.static("./views/styles"));
-  app.use(route3, express.static("./views/imgs"));
-  app.use(route3, express.static("./views/js"));
-  app.use(route3, express.static("./views/styles"));
+  app.use(this.route1, express.static("./views/imgs"));
+  app.use(this.route1, express.static("./views/js"));
+  app.use(this.route1, express.static("./views/styles"));
+  app.use(this.route2, express.static("./views/imgs"));
+  app.use(this.route2, express.static("./views/js"));
+  app.use(this.route2, express.static("./views/styles"));
+  app.use(this.route3, express.static("./views/imgs"));
+  app.use(this.route3, express.static("./views/js"));
+  app.use(this.route3, express.static("./views/styles"));
   const bodyParser = require("body-parser");
   app.use(bodyParser.json()); // to support JSON bodies
   app.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded 
 
   
 
-app.get(route1, homeGet);
+app.get(this.route1, homeGet);
 
-app.get(route2, indexGet);
+app.get(this.route2, indexGet);
 
-app.get(route3, dexyGet)
+app.get(this.route3, dexyGet)
 
-app.post(route3, function (req, res, next) {
+app.post(this.route3, function (req, res, next) {
 const stuff = req.body
 console.log(stuff)
 res.redirect("/")
