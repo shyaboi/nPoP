@@ -23,8 +23,8 @@ class Pop {
   hello() {
     console.log('Hello npm friends');
   }
-  s
-  nThing(){
+  
+  nThing(pop){
     console.log(pop);
   }
   
